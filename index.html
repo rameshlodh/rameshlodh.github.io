@@ -4,207 +4,319 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ramesh Lodh | DevOps Engineer</title>
+    <meta name="description" content="Ramesh Lodh — DevOps Engineer specializing in cloud-native infrastructure, CI/CD, Kubernetes, Docker, and Terraform. Building scalable, secure, automated systems.">
+    <meta name="author" content="Ramesh Lodh">
+    <meta name="color-scheme" content="dark light">
+    <meta name="theme-color" content="#0d1117" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+
+    <!-- Open Graph / social preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ramesh Lodh | DevOps Engineer">
+    <meta property="og:description" content="Cloud-Native Infrastructure · CI/CD · Kubernetes · Docker · Terraform">
+    <meta property="og:url" content="https://rameshlodh.github.io/">
+    <meta name="twitter:card" content="summary">
+
+    <!-- Inline SVG favicon — no external request -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230d1117'/%3E%3Ctext x='50' y='68' font-family='monospace' font-size='52' font-weight='700' text-anchor='middle' fill='%2358a6ff'%3ERL%3C/text%3E%3C/svg%3E">
+
+    <!-- Blocking head script: set theme before first paint (no flash), flag JS, define image fallback.
+         If this is blocked/disabled, the page still works: dark theme is the CSS default and
+         content is visible because the .reveal hide-rule is gated behind the .js class. -->
+    <script>
+    (function () {
+        var d = document.documentElement;
+        d.className += " js";
+        var t = null;
+        try { t = localStorage.getItem("theme"); } catch (e) {}
+        if (t === "light" || t === "dark") {
+            d.setAttribute("data-theme", t);
+        } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
+            d.setAttribute("data-theme", "light");
+        }
+        // Captured inline on every <img> so a failure is handled the instant it happens,
+        // regardless of when the rest of the script runs (critical on connection-resetting networks).
+        window.imgFail = function (img) {
+            img.classList.add("img-failed");
+            var card = img.closest ? img.closest(".skill-card") : null;
+            if (card) card.classList.add("logo-failed");
+            if (img.className.indexOf("view-counter") > -1 && img.parentNode) img.parentNode.removeChild(img);
+        };
+    })();
+    </script>
+
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <nav>
-        <div class="nav-brand">RL</div>
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#rapidfire">Rapidfire</a>
-            <a href="#contact">Connect</a>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Reusable inline SVG icon sprite (self-contained, no CDN) -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <symbol id="i-user" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+        <symbol id="i-code" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
+        <symbol id="i-layers" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></symbol>
+        <symbol id="i-zap" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+        <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></symbol>
+        <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+        <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+        <symbol id="i-server" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></symbol>
+        <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></symbol>
+        <symbol id="i-arrow-up" viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></symbol>
+        <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></symbol>
+        <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
+        <symbol id="i-menu" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
+        <symbol id="i-gitlab" viewBox="0 0 24 24"><path d="m22.65 14.39-3.86-11.9a.84.84 0 0 0-.78-.56.83.83 0 0 0-.78.56l-2.6 8H9.36l-2.6-8a.83.83 0 0 0-.78-.56.85.85 0 0 0-.78.56L1.34 14.39a1.13 1.13 0 0 0 .41 1.27L12 23.16l10.25-7.5a1.13 1.13 0 0 0 .4-1.27Z"/></symbol>
+        <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.52 11.52 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol>
+        <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></symbol>
+    </svg>
+
+    <nav id="navbar">
+        <a href="#top" class="nav-brand" aria-label="Ramesh Lodh — home">RL</a>
+        <div class="nav-right">
+            <div class="nav-links" id="navLinks">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#rapidfire">Rapidfire</a>
+                <a href="#contact">Connect</a>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="Switch to light theme">
+                <svg class="icon icon-moon" aria-hidden="true" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="#i-moon" xlink:href="#i-moon"/></svg>
+                <svg class="icon icon-sun" aria-hidden="true" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="#i-sun" xlink:href="#i-sun"/></svg>
+            </button>
+            <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+                <svg class="icon" aria-hidden="true" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="#i-menu" xlink:href="#i-menu"/></svg>
+            </button>
         </div>
     </nav>
 
-    <header>
+    <header id="top">
         <div class="hero-content">
             <p class="greeting">Hi 👋! I'm</p>
             <h1>Ramesh Lodh</h1>
-            <p class="tagline">♾️ DevOps Engineer in India<br>Cloud-Native Infrastructure Expert | 🛠️ CI/CD Solutions Architect | 🐳 Kubernetes & Docker Specialist | 🔧 Terraform & Automation Advocate</p>
+            <p class="role">♾️ DevOps Engineer in India</p>
+            <p class="tagline">Cloud-Native Infrastructure Expert · 🛠️ CI/CD Solutions Architect · 🐳 Kubernetes &amp; Docker Specialist · 🔧 Terraform &amp; Automation Advocate</p>
             <div class="hero-buttons">
                 <a href="#projects" class="btn btn-primary">View Projects</a>
                 <a href="#contact" class="btn btn-outline">Let's Connect</a>
             </div>
+            <div class="terminal" aria-hidden="true">
+                <div class="terminal-bar"><span></span><span></span><span></span><span class="terminal-title">ramesh@devops: ~</span></div>
+                <pre class="terminal-body"><span class="t-prompt">$</span> whoami
+ramesh-lodh
+<span class="t-prompt">$</span> kubectl get pods -n production
+NAME                     READY   STATUS    RESTARTS
+api-gateway-7f9c         1/1     <span class="t-ok">Running</span>   0
+worker-pool-3b2a         1/1     <span class="t-ok">Running</span>   0
+<span class="t-prompt">$</span> terraform apply --auto-approve
+<span class="t-ok">Apply complete!</span> Resources: 12 added, 0 changed.<span class="cursor"></span></pre>
+            </div>
         </div>
     </header>
 
-    <main>
-        <section id="about">
-            <h2><i class="fas fa-user"></i> Glad to See You Here!</h2>
+    <main id="main" tabindex="-1">
+        <section id="about" class="reveal">
+            <h2><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg> Glad to See You Here!</h2>
             <p>As a passionate and experienced DevOps Engineer, I thrive on driving efficiency and innovation by automating and integrating development and operations seamlessly. With deep expertise in cloud-native infrastructure, containerization, and CI/CD architecture, I focus on building scalable, secure, and resilient systems that fuel faster delivery and enhanced performance.</p>
-            <br>
             <p>🔹 Proficient in Kubernetes, Docker, Terraform, and cutting-edge automation tools, I've delivered solutions that streamline workflows, boost system reliability, and promote cross-team collaboration.</p>
-            <br>
             <p>🌱 My mission is to create high-performing infrastructures that not only scale with business needs but are also built with security at their core.</p>
         </section>
 
-        <section id="skills">
-            <h2><i class="fas fa-code"></i> DevOps Expertise</h2>
+        <section id="skills" class="reveal">
+            <h2><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg> DevOps Expertise</h2>
             <div class="skills-grid">
-                <a href="https://www.docker.com/" target="_blank" class="skill-card">
-                    <img src="https://profilinator.rishav.dev/skills-assets/docker-original-wordmark.svg" alt="Docker">
-                    <span>Docker</span>
-                </a>
-                <a href="https://kubernetes.io/" target="_blank" class="skill-card">
-                    <img src="https://profilinator.rishav.dev/skills-assets/kubernetes-icon.svg" alt="Kubernetes">
-                    <span>Kubernetes</span>
-                </a>
-                <a href="https://www.terraform.io/" target="_blank" class="skill-card">
-                    <img src="https://profilinator.rishav.dev/skills-assets/terraformio-icon.svg" alt="Terraform">
-                    <span>Terraform</span>
-                </a>
-                <a href="https://aws.amazon.com/" target="_blank" class="skill-card">
-                    <img src="https://profilinator.rishav.dev/skills-assets/amazonwebservices-original-wordmark.svg" alt="AWS">
-                    <span>AWS</span>
-                </a>
-                <a href="https://azure.microsoft.com/" target="_blank" class="skill-card">
-                    <img src="https://profilinator.rishav.dev/skills-assets/microsoft_azure-icon.svg" alt="Azure">
-                    <span>Azure</span>
-                </a>
-                <a href="https://cloud.google.com/" target="_blank" class="skill-card">
-                    <img src="https://profilinator.rishav.dev/skills-assets/google_cloud-icon.svg" alt="GCP">
-                    <span>GCP</span>
-                </a>
-                <a href="https://www.jenkins.io/" target="_blank" class="skill-card">
-                    <img src="https://profilinator.rishav.dev/skills-assets/jenkins-icon.svg" alt="Jenkins">
-                    <span>Jenkins</span>
-                </a>
-                <a href="https://github.com/" target="_blank" class="skill-card">
-                    <img src="https://profilinator.rishav.dev/skills-assets/git-scm-icon.svg" alt="Git">
-                    <span>Git</span>
-                </a>
-                <a href="https://about.gitlab.com/" target="_blank" class="skill-card">
-                    <img src="https://profilinator.rishav.dev/skills-assets/gitlab.svg" alt="GitLab">
-                    <span>GitLab</span>
-                </a>
-                <a href="https://www.linux.org/" target="_blank" class="skill-card">
-                    <img src="https://profilinator.rishav.dev/skills-assets/linux-original.svg" alt="Linux">
-                    <span>Linux</span>
-                </a>
-                <a href="https://www.gnu.org/software/bash/" target="_blank" class="skill-card">
-                    <img src="https://profilinator.rishav.dev/skills-assets/gnu_bash-icon.svg" alt="Bash">
-                    <span>Bash</span>
-                </a>
-                <a href="https://www.python.org/" target="_blank" class="skill-card">
-                    <img src="https://profilinator.rishav.dev/skills-assets/python-original.svg" alt="Python">
-                    <span>Python</span>
-                </a>
-                <a href="https://www.ansible.com/" target="_blank" class="skill-card">
-                    <img src="https://profilinator.rishav.dev/skills-assets/ansible.png" alt="Ansible">
-                    <span>Ansible</span>
-                </a>
-                <a href="https://grafana.com/" target="_blank" class="skill-card">
-                    <img src="https://profilinator.rishav.dev/skills-assets/grafana.png" alt="Grafana">
-                    <span>Grafana</span>
-                </a>
-                <a href="https://www.nginx.com/" target="_blank" class="skill-card">
-                    <img src="https://profilinator.rishav.dev/skills-assets/nginx-original.svg" alt="Nginx">
-                    <span>Nginx</span>
-                </a>
-                <a href="https://www.mongodb.com/" target="_blank" class="skill-card">
-                    <img src="https://profilinator.rishav.dev/skills-assets/mongodb-original-wordmark.svg" alt="MongoDB">
-                    <span>MongoDB</span>
-                </a>
-                <a href="https://www.postgresql.org/" target="_blank" class="skill-card">
-                    <img src="https://profilinator.rishav.dev/skills-assets/postgresql-original-wordmark.svg" alt="PostgreSQL">
-                    <span>PostgreSQL</span>
-                </a>
-                <a href="https://redis.io/" target="_blank" class="skill-card">
-                    <img src="https://profilinator.rishav.dev/skills-assets/redis-original-wordmark.svg" alt="Redis">
-                    <span>Redis</span>
-                </a>
-                <a href="https://www.elastic.co/kibana/" target="_blank" class="skill-card">
-                    <img src="https://profilinator.rishav.dev/skills-assets/kibana.png" alt="Kibana">
-                    <span>Kibana</span>
-                </a>
-                <a href="https://www.mysql.com/" target="_blank" class="skill-card">
-                    <img src="https://profilinator.rishav.dev/skills-assets/mysql-original-wordmark.svg" alt="MySQL">
-                    <span>MySQL</span>
-                </a>
-                <a href="https://flask.palletsprojects.com/" target="_blank" class="skill-card">
-                    <img src="https://profilinator.rishav.dev/skills-assets/flask.png" alt="Flask">
-                    <span>Flask</span>
-                </a>
+                <a href="https://www.docker.com/" target="_blank" rel="noopener" class="skill-card"><img src="https://profilinator.rishav.dev/skills-assets/docker-original-wordmark.svg" alt="" loading="lazy" decoding="async" width="48" height="48" onerror="imgFail(this)"><span>Docker</span></a>
+                <a href="https://kubernetes.io/" target="_blank" rel="noopener" class="skill-card"><img src="https://profilinator.rishav.dev/skills-assets/kubernetes-icon.svg" alt="" loading="lazy" decoding="async" width="48" height="48" onerror="imgFail(this)"><span>Kubernetes</span></a>
+                <a href="https://www.terraform.io/" target="_blank" rel="noopener" class="skill-card"><img src="https://profilinator.rishav.dev/skills-assets/terraformio-icon.svg" alt="" loading="lazy" decoding="async" width="48" height="48" onerror="imgFail(this)"><span>Terraform</span></a>
+                <a href="https://aws.amazon.com/" target="_blank" rel="noopener" class="skill-card"><img src="https://profilinator.rishav.dev/skills-assets/amazonwebservices-original-wordmark.svg" alt="" loading="lazy" decoding="async" width="48" height="48" onerror="imgFail(this)"><span>AWS</span></a>
+                <a href="https://azure.microsoft.com/" target="_blank" rel="noopener" class="skill-card"><img src="https://profilinator.rishav.dev/skills-assets/microsoft_azure-icon.svg" alt="" loading="lazy" decoding="async" width="48" height="48" onerror="imgFail(this)"><span>Azure</span></a>
+                <a href="https://cloud.google.com/" target="_blank" rel="noopener" class="skill-card"><img src="https://profilinator.rishav.dev/skills-assets/google_cloud-icon.svg" alt="" loading="lazy" decoding="async" width="48" height="48" onerror="imgFail(this)"><span>GCP</span></a>
+                <a href="https://www.jenkins.io/" target="_blank" rel="noopener" class="skill-card"><img src="https://profilinator.rishav.dev/skills-assets/jenkins-icon.svg" alt="" loading="lazy" decoding="async" width="48" height="48" onerror="imgFail(this)"><span>Jenkins</span></a>
+                <a href="https://github.com/" target="_blank" rel="noopener" class="skill-card"><img src="https://profilinator.rishav.dev/skills-assets/git-scm-icon.svg" alt="" loading="lazy" decoding="async" width="48" height="48" onerror="imgFail(this)"><span>Git</span></a>
+                <a href="https://about.gitlab.com/" target="_blank" rel="noopener" class="skill-card"><img src="https://profilinator.rishav.dev/skills-assets/gitlab.svg" alt="" loading="lazy" decoding="async" width="48" height="48" onerror="imgFail(this)"><span>GitLab</span></a>
+                <a href="https://www.linux.org/" target="_blank" rel="noopener" class="skill-card"><img src="https://profilinator.rishav.dev/skills-assets/linux-original.svg" alt="" loading="lazy" decoding="async" width="48" height="48" onerror="imgFail(this)"><span>Linux</span></a>
+                <a href="https://www.gnu.org/software/bash/" target="_blank" rel="noopener" class="skill-card"><img src="https://profilinator.rishav.dev/skills-assets/gnu_bash-icon.svg" alt="" loading="lazy" decoding="async" width="48" height="48" onerror="imgFail(this)"><span>Bash</span></a>
+                <a href="https://www.python.org/" target="_blank" rel="noopener" class="skill-card"><img src="https://profilinator.rishav.dev/skills-assets/python-original.svg" alt="" loading="lazy" decoding="async" width="48" height="48" onerror="imgFail(this)"><span>Python</span></a>
+                <a href="https://www.ansible.com/" target="_blank" rel="noopener" class="skill-card"><img src="https://profilinator.rishav.dev/skills-assets/ansible.png" alt="" loading="lazy" decoding="async" width="48" height="48" onerror="imgFail(this)"><span>Ansible</span></a>
+                <a href="https://grafana.com/" target="_blank" rel="noopener" class="skill-card"><img src="https://profilinator.rishav.dev/skills-assets/grafana.png" alt="" loading="lazy" decoding="async" width="48" height="48" onerror="imgFail(this)"><span>Grafana</span></a>
+                <a href="https://www.nginx.com/" target="_blank" rel="noopener" class="skill-card"><img src="https://profilinator.rishav.dev/skills-assets/nginx-original.svg" alt="" loading="lazy" decoding="async" width="48" height="48" onerror="imgFail(this)"><span>Nginx</span></a>
+                <a href="https://www.mongodb.com/" target="_blank" rel="noopener" class="skill-card"><img src="https://profilinator.rishav.dev/skills-assets/mongodb-original-wordmark.svg" alt="" loading="lazy" decoding="async" width="48" height="48" onerror="imgFail(this)"><span>MongoDB</span></a>
+                <a href="https://www.postgresql.org/" target="_blank" rel="noopener" class="skill-card"><img src="https://profilinator.rishav.dev/skills-assets/postgresql-original-wordmark.svg" alt="" loading="lazy" decoding="async" width="48" height="48" onerror="imgFail(this)"><span>PostgreSQL</span></a>
+                <a href="https://redis.io/" target="_blank" rel="noopener" class="skill-card"><img src="https://profilinator.rishav.dev/skills-assets/redis-original-wordmark.svg" alt="" loading="lazy" decoding="async" width="48" height="48" onerror="imgFail(this)"><span>Redis</span></a>
+                <a href="https://www.elastic.co/kibana/" target="_blank" rel="noopener" class="skill-card"><img src="https://profilinator.rishav.dev/skills-assets/kibana.png" alt="" loading="lazy" decoding="async" width="48" height="48" onerror="imgFail(this)"><span>Kibana</span></a>
+                <a href="https://www.mysql.com/" target="_blank" rel="noopener" class="skill-card"><img src="https://profilinator.rishav.dev/skills-assets/mysql-original-wordmark.svg" alt="" loading="lazy" decoding="async" width="48" height="48" onerror="imgFail(this)"><span>MySQL</span></a>
+                <a href="https://flask.palletsprojects.com/" target="_blank" rel="noopener" class="skill-card"><img src="https://profilinator.rishav.dev/skills-assets/flask.png" alt="" loading="lazy" decoding="async" width="48" height="48" onerror="imgFail(this)"><span>Flask</span></a>
             </div>
         </section>
 
-        <section id="projects">
-            <h2><i class="fas fa-rocket"></i> Projects</h2>
+        <section id="projects" class="reveal">
+            <h2><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg> Projects</h2>
             <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-shield-halved"></i></div>
+                <article class="project-card">
+                    <div class="project-icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></div>
                     <h3>Advanced CI/CD Pipeline</h3>
-                    <p>CI/CD with Dockle, Checkov, Semgrep, Kaniko, Docker & GitHub Actions for security-first deployments.</p>
-                    <div class="project-tags">
-                        <span>GitHub Actions</span><span>Dockle</span><span>Checkov</span><span>Kaniko</span>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-globe"></i></div>
+                    <p>CI/CD with Dockle, Checkov, Semgrep, Kaniko, Docker &amp; GitHub Actions for security-first deployments.</p>
+                    <div class="project-tags"><span>GitHub Actions</span><span>Dockle</span><span>Checkov</span><span>Kaniko</span></div>
+                </article>
+                <article class="project-card">
+                    <div class="project-icon"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg></div>
                     <h3>Portfolio CI/CD Site</h3>
                     <p>This site — auto-deployed to GitHub Pages via GitHub Actions on every push to main.</p>
-                    <div class="project-tags">
-                        <span>GitHub Actions</span><span>HTML/CSS</span><span>CI/CD</span>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-server"></i></div>
+                    <div class="project-tags"><span>GitHub Actions</span><span>HTML/CSS</span><span>CI/CD</span></div>
+                </article>
+                <article class="project-card">
+                    <div class="project-icon"><svg class="icon" aria-hidden="true"><use href="#i-server"/></svg></div>
                     <h3>Infrastructure as Code</h3>
                     <p>AWS infrastructure provisioned and managed entirely with Terraform modules.</p>
-                    <div class="project-tags">
-                        <span>Terraform</span><span>AWS</span><span>IaC</span>
-                    </div>
-                </div>
+                    <div class="project-tags"><span>Terraform</span><span>AWS</span><span>IaC</span></div>
+                </article>
             </div>
         </section>
 
-        <section id="rapidfire">
-            <h2><i class="fas fa-bolt"></i> Rapidfire</h2>
+        <section id="rapidfire" class="reveal">
+            <h2><svg class="icon" aria-hidden="true"><use href="#i-zap"/></svg> Rapidfire</h2>
             <div class="rapidfire-grid">
-                <div class="rapidfire-item">
-                    <strong>🔭 Working on</strong>
-                    <p>Advanced CI/CD with Dockle, Checkov, Semgrep, Kaniko, Docker, GitHub Actions</p>
-                </div>
-                <div class="rapidfire-item">
-                    <strong>🌱 Learning</strong>
-                    <p>Kubernetes with Kustomization</p>
-                </div>
-                <div class="rapidfire-item">
-                    <strong>❓ Ask me about</strong>
-                    <p>CI/CD, Docker, Kubernetes, GitHub Actions</p>
-                </div>
-                <div class="rapidfire-item">
-                    <strong>⚡ Fun fact</strong>
-                    <p>I use yml over yaml</p>
-                </div>
+                <div class="rapidfire-item"><strong>🔭 Working on</strong><p>Advanced CI/CD with Dockle, Checkov, Semgrep, Kaniko, Docker, GitHub Actions</p></div>
+                <div class="rapidfire-item"><strong>🌱 Learning</strong><p>Kubernetes with Kustomization</p></div>
+                <div class="rapidfire-item"><strong>❓ Ask me about</strong><p>CI/CD, Docker, Kubernetes, GitHub Actions</p></div>
+                <div class="rapidfire-item"><strong>⚡ Fun fact</strong><p>I use yml over yaml</p></div>
             </div>
         </section>
 
-        <section id="stats">
-            <h2><i class="fab fa-github"></i> GitHub Stats</h2>
+        <section id="stats" class="reveal">
+            <h2><svg class="icon icon--brand" aria-hidden="true"><use href="#i-github"/></svg> GitHub Stats</h2>
             <div class="stats-grid">
-                <img src="https://github-readme-stats.vercel.app/api?username=ramesherrorhunter&show_icons=true&count_private=true&hide_border=true&theme=github_dark" alt="GitHub Stats">
-                <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ramesherrorhunter&hide_border=true&layout=compact&theme=github_dark" alt="Top Languages">
+                <img src="https://github-readme-stats.vercel.app/api?username=ramesherrorhunter&show_icons=true&count_private=true&hide_border=true&theme=github_dark" alt="Ramesh Lodh's GitHub statistics" loading="lazy" decoding="async" onerror="imgFail(this)">
+                <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ramesherrorhunter&hide_border=true&layout=compact&theme=github_dark" alt="Ramesh Lodh's most used languages" loading="lazy" decoding="async" onerror="imgFail(this)">
             </div>
+            <p class="stats-fallback">Stats not loading? View the live profile on <a href="https://github.com/ramesherrorhunter" target="_blank" rel="noopener">GitHub&nbsp;↗</a></p>
         </section>
 
-        <section id="contact">
-            <h2><i class="fas fa-handshake"></i> Let's Connect!</h2>
+        <section id="contact" class="reveal">
+            <h2><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg> Let's Connect!</h2>
             <p>Interested in collaborating? Let's build smarter, faster, and more resilient technology together! 🌐💻</p>
             <div class="contact-links">
-                <a href="https://www.linkedin.com/in/ramesh-lodh" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="https://github.com/ramesherrorhunter" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                <a href="https://gitlab.com/RameshLodh" target="_blank"><i class="fab fa-gitlab"></i> GitLab</a>
+                <a href="https://www.linkedin.com/in/ramesh-lodh" target="_blank" rel="noopener"><svg class="icon icon--brand" aria-hidden="true"><use href="#i-linkedin"/></svg> LinkedIn</a>
+                <a href="https://github.com/ramesherrorhunter" target="_blank" rel="noopener"><svg class="icon icon--brand" aria-hidden="true"><use href="#i-github"/></svg> GitHub</a>
+                <a href="https://gitlab.com/RameshLodh" target="_blank" rel="noopener"><svg class="icon icon--brand" aria-hidden="true"><use href="#i-gitlab"/></svg> GitLab</a>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>Built with <i class="fas fa-heart"></i> &bull; Deployed with GitHub Actions &bull; Hosted on GitHub Pages</p>
-        <img src="https://komarev.com/ghpvc/?username=ramesherrorhunter&style=flat-square" alt="Profile views" style="margin-top: 0.5rem;">
+        <p>Built with <svg class="icon icon-heart" aria-hidden="true"><use href="#i-heart"/></svg> · Deployed with GitHub Actions · Hosted on GitHub Pages</p>
+        <img src="https://komarev.com/ghpvc/?username=ramesherrorhunter&style=flat-square" alt="Profile view counter" loading="lazy" decoding="async" class="view-counter" onerror="imgFail(this)">
     </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg class="icon" aria-hidden="true" xmlns:xlink="http://www.w3.org/1999/xlink"><use href="#i-arrow-up" xlink:href="#i-arrow-up"/></svg>
+    </button>
+
+    <script>
+    (function () {
+        "use strict";
+        // Polyfill NodeList.forEach for older engines so a single missing feature
+        // can never abort the script and leave .reveal content hidden.
+        if (window.NodeList && !NodeList.prototype.forEach) {
+            NodeList.prototype.forEach = Array.prototype.forEach;
+        }
+        var root = document.documentElement;
+
+        /* ---- Theme toggle (initial theme already applied by the head script) ---- */
+        function syncThemeLabel() {
+            var btn = document.getElementById("themeToggle");
+            if (!btn) return;
+            var isDark = root.getAttribute("data-theme") !== "light";
+            btn.setAttribute("aria-label", isDark ? "Switch to light theme" : "Switch to dark theme");
+        }
+        var themeToggle = document.getElementById("themeToggle");
+        if (themeToggle) {
+            syncThemeLabel();
+            themeToggle.addEventListener("click", function () {
+                var next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
+                root.setAttribute("data-theme", next);
+                try { localStorage.setItem("theme", next); } catch (e) {}
+                syncThemeLabel();
+            });
+        }
+
+        /* ---- Mobile menu ---- */
+        var navToggle = document.getElementById("navToggle");
+        var navLinks = document.getElementById("navLinks");
+        function setMenu(open) {
+            if (!navLinks) return;
+            navLinks.classList.toggle("open", open);
+            if (navToggle) {
+                navToggle.setAttribute("aria-expanded", String(open));
+                navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+            }
+        }
+        if (navToggle && navLinks) {
+            navToggle.addEventListener("click", function () {
+                setMenu(!navLinks.classList.contains("open"));
+            });
+            navLinks.addEventListener("click", function (e) {
+                if (e.target.tagName === "A") setMenu(false);
+            });
+            document.addEventListener("keydown", function (e) {
+                if (e.key === "Escape" && navLinks.classList.contains("open")) {
+                    setMenu(false);
+                    navToggle.focus();
+                }
+            });
+        }
+
+        /* ---- Scroll-driven UI: back-to-top + nav shadow ---- */
+        var backToTop = document.getElementById("backToTop");
+        var navbar = document.getElementById("navbar");
+        function onScroll() {
+            var y = window.pageYOffset || root.scrollTop || 0;
+            if (backToTop) backToTop.classList.toggle("visible", y > 500);
+            if (navbar) navbar.classList.toggle("scrolled", y > 20);
+        }
+        window.addEventListener("scroll", onScroll, { passive: true });
+        onScroll();
+        if (backToTop) {
+            backToTop.addEventListener("click", function () {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+        }
+
+        /* ---- Reveal-on-scroll + scroll-spy (degrade safely without IO) ---- */
+        var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        var reveals = document.querySelectorAll(".reveal");
+        var sections = document.querySelectorAll("main section[id]");
+        var navAnchors = document.querySelectorAll(".nav-links a");
+
+        if ("IntersectionObserver" in window && !reduceMotion) {
+            var revealObs = new IntersectionObserver(function (entries) {
+                entries.forEach(function (en) {
+                    if (en.isIntersecting) {
+                        en.target.classList.add("visible");
+                        revealObs.unobserve(en.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+            reveals.forEach(function (el) { revealObs.observe(el); });
+        } else {
+            reveals.forEach(function (el) { el.classList.add("visible"); });
+        }
+
+        if ("IntersectionObserver" in window && sections.length) {
+            var spyObs = new IntersectionObserver(function (entries) {
+                entries.forEach(function (en) {
+                    if (en.isIntersecting) {
+                        var id = en.target.getAttribute("id");
+                        navAnchors.forEach(function (a) {
+                            a.classList.toggle("active", a.getAttribute("href") === "#" + id);
+                        });
+                    }
+                });
+            }, { rootMargin: "-45% 0px -50% 0px" });
+            sections.forEach(function (s) { spyObs.observe(s); });
+        }
+        // No IO → no active-nav highlight (graceful: nav still works, just no underline).
+    })();
+    </script>
 </body>
 </html>
