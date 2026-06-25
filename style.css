@@ -169,7 +169,14 @@ header h1 {
     }
 }
 .role { font-size: 1.25rem; font-weight: 600; color: var(--text); margin-bottom: 0.8rem; }
-.tagline { font-size: 1.02rem; color: var(--text-dim); max-width: 620px; margin: 0 auto 2rem; }
+.tagline { font-size: 1.02rem; color: var(--text-dim); max-width: 620px; margin: 0 auto 1rem; }
+.hero-stack {
+    font-family: 'SFMono-Regular', Consolas, monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    color: var(--accent);
+    margin-bottom: 2rem;
+}
 .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
 .btn {
     padding: 0.7rem 1.6rem;
@@ -244,6 +251,33 @@ h2 .icon { color: var(--accent); font-size: 1.4rem; }
 #about p { color: var(--text-dim); margin-bottom: 1rem; }
 #about p:last-child { margin-bottom: 0; }
 
+/* Section intro / freshness line under an h2 */
+.section-intro { color: var(--text-dim); font-size: 0.92rem; margin: -0.9rem 0 1.8rem; }
+
+/* Skill categories */
+.skill-group { margin-bottom: 2rem; }
+.skill-group:last-child { margin-bottom: 0; }
+.skill-group-label {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-weight: 700;
+    color: var(--text-dim);
+    margin-bottom: 0.9rem;
+    padding-left: 0.6rem;
+    border-left: 3px solid var(--accent);
+}
+
+/* Inline code accents (taglines, rapidfire) */
+code {
+    font-family: 'SFMono-Regular', Consolas, monospace;
+    font-size: 0.88em;
+    background: rgba(88,166,255,0.12);
+    color: var(--accent);
+    padding: 0.05em 0.4em;
+    border-radius: 5px;
+}
+
 /* Reveal animation — hide ONLY when JS is active, so no-JS users still see everything */
 .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
 .js .reveal.visible { opacity: 1; transform: none; }
@@ -294,6 +328,18 @@ h2 .icon { color: var(--accent); font-size: 1.4rem; }
     font-size: 0.75rem;
     font-weight: 500;
 }
+.project-repo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 1rem;
+    color: var(--accent);
+    font-size: 0.82rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+.project-repo:hover { text-decoration: underline; }
+.project-repo .icon { font-size: 0.95rem; }
 
 /* ===== Rapidfire ===== */
 .rapidfire-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; }
