@@ -45,7 +45,7 @@
     })();
     </script>
 
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -62,6 +62,7 @@
         <symbol id="i-server" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></symbol>
         <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></symbol>
         <symbol id="i-arrow-up" viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></symbol>
+        <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
         <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></symbol>
         <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
         <symbol id="i-menu" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
@@ -118,9 +119,17 @@ worker-pool-3b2a         1/1     <span class="t-ok">Running</span>   0
     <main id="main" tabindex="-1">
         <section id="about" class="reveal">
             <h2><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg> About Me</h2>
-            <p>I'm a DevOps engineer in India who builds cloud-native infrastructure with security wired in from the first commit — not bolted on at the end.</p>
-            <p>My CI/CD pipelines gate every container build on Dockle, Checkov, and Semgrep, so a vulnerability or misconfiguration stops the build before it reaches production. I build images with Kaniko, orchestrate the flow through GitHub Actions, and define AWS infrastructure as reusable Terraform modules — so environments stay versioned and reproducible instead of clicked together by hand.</p>
-            <p>My approach is simple: automate the repeatable parts, make security the default rather than a review-stage afterthought, and keep everything reproducible from code. Right now I'm building out an advanced security-first CI/CD setup and learning Kubernetes the Kustomize way.</p>
+            <div class="about-wrap">
+                <img class="about-photo" src="assets/profile.jpg" alt="Ramesh Lodh" width="394" height="700" loading="lazy" decoding="async" onerror="imgFail(this)">
+                <div class="about-text">
+                    <p>I'm a DevOps engineer in India who builds cloud-native infrastructure with security wired in from the first commit — not bolted on at the end.</p>
+                    <p>My CI/CD pipelines gate every container build on Dockle, Checkov, and Semgrep, so a vulnerability or misconfiguration stops the build before it reaches production. I build images with Kaniko, orchestrate the flow through GitHub Actions, and define AWS infrastructure as reusable Terraform modules — so environments stay versioned and reproducible instead of clicked together by hand.</p>
+                    <p>My approach is simple: automate the repeatable parts, make security the default rather than a review-stage afterthought, and keep everything reproducible from code. Right now I'm building out an advanced security-first CI/CD setup and learning Kubernetes the Kustomize way.</p>
+                    <a class="btn btn-primary cv-btn" href="assets/Ramesh-Lodh-CV.pdf" target="_blank" rel="noopener">
+                        <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> Download CV
+                    </a>
+                </div>
+            </div>
         </section>
 
         <section id="skills" class="reveal">
@@ -250,6 +259,7 @@ worker-pool-3b2a         1/1     <span class="t-ok">Running</span>   0
                 <a href="https://www.linkedin.com/in/ramesh-lodh" target="_blank" rel="noopener"><svg class="icon icon--brand" aria-hidden="true"><use href="#i-linkedin"/></svg> LinkedIn</a>
                 <a href="https://github.com/ramesherrorhunter" target="_blank" rel="noopener"><svg class="icon icon--brand" aria-hidden="true"><use href="#i-github"/></svg> GitHub</a>
                 <a href="https://gitlab.com/RameshLodh" target="_blank" rel="noopener"><svg class="icon icon--brand" aria-hidden="true"><use href="#i-gitlab"/></svg> GitLab</a>
+                <a href="assets/Ramesh-Lodh-CV.pdf" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> Download CV</a>
             </div>
         </section>
     </main>
